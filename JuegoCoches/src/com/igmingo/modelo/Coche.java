@@ -68,7 +68,7 @@ public class Coche extends Vehiculo {
 		}
 	
 	public void imprimir() {
-		System.out.println("Coche " + color + " de marca " + marca + " modelo " + modelo + " consume " + consumo);
+		System.out.println("Coche " + color + " de marca " + marca + " modelo " + modelo + ".");
 	}
 	
 }
