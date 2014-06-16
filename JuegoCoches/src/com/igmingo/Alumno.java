@@ -69,7 +69,7 @@ public class Alumno {
 	
 	public void subirNota(int sumar) {
 		if (sumar > 0) {
-		nota = nota + sumar;
+		nota += sumar; // nota = nota + sumar
 		setNota(nota);
 		}
 	}
