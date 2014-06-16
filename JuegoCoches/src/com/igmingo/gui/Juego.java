@@ -1,6 +1,6 @@
-package com.igmingo.juego;
+package com.igmingo.gui;
 
-import com.igmingo.juego.modelo.Coche;
+import com.igmingo.modelo.Coche;
 
 public class Juego {
 

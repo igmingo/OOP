@@ -1,4 +1,4 @@
-package com.igmingo.juego.modelo;
+package com.igmingo.modelo;
 
 public class Coche {
 	
