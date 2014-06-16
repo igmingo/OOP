@@ -1,6 +1,6 @@
 package com.igmingo.modelo;
 
-public class Coche extends Vehiculo {
+public class Moto extends Vehiculo {
 	
 	//Atributos
 	private String combustible;	// Diesel, Gasolina, Biodiesel
@@ -8,13 +8,13 @@ public class Coche extends Vehiculo {
 	private double consumo;		// consumo l/100km
 	
 	//Constructores
-	public Coche() {
+	public Moto() {
 		combustible = "Gasolina";
 		deposito = 125;
 		consumo = 11;
 	}
 	
-	public Coche(String combustible, int deposito, double consumo) {
+	public Moto(String combustible, int deposito, double consumo) {
 		this.combustible = combustible;
 		this.deposito = deposito;
 		this.consumo = consumo;
@@ -22,7 +22,7 @@ public class Coche extends Vehiculo {
 	
 	//Constructor con superclase
 	
-	public Coche(String marca, String modelo, String color, String numeroSerie,
+	public Moto(String marca, String modelo, String color, String numeroSerie,
 			String combustible, int deposito, double consumo) {
 		super(marca, modelo, color, numeroSerie);
 		this.combustible = combustible;
@@ -62,13 +62,8 @@ public class Coche extends Vehiculo {
 		return kmsrec*consumo;
 	}
 
-		public double consumido (double kms, double precio) {
-			double kmsrec = kms/100;
-			return kmsrec*consumo*precio;
-		}
-	
-	public void imprimir() {
-		System.out.println("Coche " + color + " de marca " + marca + " modelo " + modelo + " consume " + consumo);
+	public double consumido (double kms, double precio) {
+		double kmsrec = kms/100;
+		return kmsrec*consumo*precio;
 	}
-	
 }
