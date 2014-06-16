@@ -4,23 +4,23 @@ public class Alumno {
 	String dni;
 	String nombre;
 	int edad;
-	int curso;
+	String curso;
+	String grupo;
 	double nota;
 	
-		/**
-	 * @param dni
-	 * @param nombre
-	 * @param edad
-	 * @param curso
-	 * @param nota
-	 */
-	public Alumno(String _dni, String _nombre, int _edad, int _curso, double _nota) {
+	public Alumno(String _dni, String _nombre, int _edad) {
 		super();
 		dni = _dni;
 		nombre = _nombre;
 		edad = _edad;
-		curso = _curso;
-		setNota(_nota);
+	}
+
+	public String getGrupo() {
+		return grupo;
+	}
+
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
 	}
 
 	public String getDni() {
@@ -41,17 +41,17 @@ public class Alumno {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public int getCurso() {
+	public String getCurso() {
 		return curso;
 	}
-	public void setCurso(int curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 	public double getNota() {
 		return nota;
 	}
 	public void setNota(double nota) {
-		nota = redondear(nota, 2);
+		nota = redondear(nota, 1);
 		if ((nota<=10)&&(nota>=0)) {
 			this.nota = nota;
 		} else {
@@ -60,11 +60,17 @@ public class Alumno {
 	}
 
 	//Metodos
+	
+	public void asignarCurso (String _curso, String _grupo) {
+		curso = _curso;
+		grupo = _grupo;
+	}
+	
 	public void imprimir() {
 		
         //DecimalFormat df = new DecimalFormat("#.##");
-		System.out.print(nombre + " de " + edad + " años con DNI " + dni + " tiene un " + nota + ". ");
-		System.out.println("Ha obtenido un " + this.obtenerCalificacion(nota) + ".");
+		System.out.print(nombre + " de " + edad + " años con DNI " + dni + " tiene una nota de " + nota + ". ");
+		System.out.println("Ha obtenido un " + this.obtenerCalificacion(nota) + " en el Curso " + curso + " " + grupo + ".");
 	}
 	
 	public void subirNota(int sumar) {

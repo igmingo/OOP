@@ -1,3 +1,5 @@
+package com.igmingo.juego.modelo;
+
 public class Coche {
 	
 	//Atributos
