@@ -1,6 +1,7 @@
 package com.igmingo.gui;
 
 import com.igmingo.modelo.Ahorro;
+import com.igmingo.modelo.Cliente;
 import com.igmingo.modelo.Corriente;
 import com.igmingo.modelo.Cuenta;
 
@@ -8,10 +9,14 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+	
 	Cuenta[] listacuentas = new Cuenta [4];
 	
 	listacuentas[0] = new Corriente (1111, 200, 0.06);
+	
+	Cliente nacho = new Cliente ("Nacho", "20454900J");
+	listacuentas[0].setCliente(nacho);
+	
 	listacuentas[1] = new Ahorro (2222, 180, 0.02);
 	listacuentas[2] = new Ahorro (3333, 220, 0.02);
 	listacuentas[3] = new Corriente (4444, 800, 0.02);
