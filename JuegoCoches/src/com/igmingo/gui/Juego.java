@@ -14,7 +14,9 @@ public class Juego {
 		detalles (b1);
 		detalles (c2);
 		detalles (c3);
-
+		System.out.println(b1);
+		System.out.println(c2);
+		System.out.println(c3);
 	}
 	
 	public static void detalles (Vehiculo v) {

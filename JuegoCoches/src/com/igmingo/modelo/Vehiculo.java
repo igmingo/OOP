@@ -52,4 +52,15 @@ public class Vehiculo {
 		System.out.println("Vehículo " + color + " de marca " + marca + " modelo " + modelo);
 	}
 	
+	public boolean equals (Object o) {
+		if (o instanceof Vehiculo) {
+			Vehiculo v = (Vehiculo) o;
+			if (v.getMarca().equals(marca) &&				//mejor usar equals entre dos String pues es mas correcto, por compatibilidad
+					v.getModelo().equals(modelo) &&
+					v.getNumeroSerie().equals(numeroSerie)
+					) {
+				return true;
+			}
+		} return false;
+	 }
 }

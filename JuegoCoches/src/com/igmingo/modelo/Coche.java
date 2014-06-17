@@ -71,4 +71,9 @@ public class Coche extends Vehiculo {
 		System.out.println("Coche " + color + " de marca " + marca + " modelo " + modelo + ".");
 	}
 	
+	public String toString() {
+		return marca+" "+modelo+" "+color;
+	}
+
+	
 }
