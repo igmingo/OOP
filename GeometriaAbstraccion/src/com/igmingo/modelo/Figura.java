@@ -1,6 +1,8 @@
 package com.igmingo.modelo;
 
-public abstract class  Figura {
+import com.igmingo.gui.IRepresentacionGrafica;
+
+public abstract class  Figura implements IRepresentacionGrafica{
 	
 	public abstract double area();
 	public abstract double perimetro ();

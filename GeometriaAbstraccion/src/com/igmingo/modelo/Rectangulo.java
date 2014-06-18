@@ -36,5 +36,15 @@ public class Rectangulo extends Figura{
 	public String detalles() {
 		return "Soy un rectangulo de "+ancho+"x"+alto;
 	}
+
+	public void ponerColor(String codigo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int pintar(Figura grafica) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }

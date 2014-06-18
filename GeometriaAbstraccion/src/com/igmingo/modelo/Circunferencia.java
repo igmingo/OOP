@@ -1,6 +1,6 @@
 package com.igmingo.modelo;
 
-public class Circunferencia extends Figura{
+public class Circunferencia extends Figura {
 	
 	private int radio;
 
@@ -26,6 +26,16 @@ public class Circunferencia extends Figura{
 	
 	public String detalles() {
 		return "Soy una circunferencia de radio "+radio;
+	}
+
+	public void ponerColor(String codigo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int pintar(Figura grafica) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }
