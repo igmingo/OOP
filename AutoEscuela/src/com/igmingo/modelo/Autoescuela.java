@@ -24,10 +24,10 @@ public class Autoescuela {
 
 	public void setEdad(int edad) throws Exception {
 		if (edad<18) {
-			throw new Exception ("La edad " + edad + " está por debajo del máximo legal, 18 años.");
+			throw new Exception ("La edad introducida " + edad + " está por debajo del máximo legal, 18 años.");
 		}
 		if (edad>64) {
-			throw new Exception ("La edad " + edad + " está por encima del máximo legal, 64 años.");
+			throw new Exception ("La edad introducida " + edad + " está por encima del máximo legal, 64 años.");
 		}
 		this.edad = edad;
 	}
