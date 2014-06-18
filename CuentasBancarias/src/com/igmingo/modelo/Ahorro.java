@@ -2,22 +2,40 @@ package com.igmingo.modelo;
 
 public class Ahorro extends Cuenta {
 	
-	private int ncuenta;
+	private String ncuenta;
 	private double saldo;
 	private double interes;
+	private double credito;
 	
-	public Ahorro(int ncuenta, double saldo, double interes) {
+	public Ahorro(String ncuenta, double saldo, double interes, double credito) {
 		this.ncuenta = ncuenta;
 		this.saldo = saldo;
 		this.interes = interes;
+		this.credito = 0;
 	}
-
-	public int getNcuenta() {
+	
+	public Ahorro(Cliente cliente, String ncuenta, double saldo, double interes, double credito) {
+		super (cliente);
+		this.ncuenta = ncuenta;
+		this.saldo = saldo;
+		this.interes = interes;
+		this.credito = 0;
+	}
+		
+	public String getNcuenta() {
 		return ncuenta;
 	}
 
-	public void setNcuenta(int ncuenta) {
+	public void setNcuenta(String ncuenta) {
 		this.ncuenta = ncuenta;
+	}
+		
+	public double getCredito() {
+		return credito;
+	}
+
+	public void setCredito(double credito) {
+		this.credito = credito;
 	}
 
 	public double getSaldo() {
@@ -39,22 +57,20 @@ public class Ahorro extends Cuenta {
 	public void ingresarFondos(double euros) {
 		double cantidad;	
 		cantidad = (euros + (interes*euros));
-		System.out.println((0-saldo) + "Se han ingresado " + cantidad + "€.");
-		saldo += cantidad;
-		// TODO Auto-generated method stub
+		System.out.println((0-saldo) + "Se han ingresado " + cantidad + "€.");	
+		saldo = Cuenta.redondear(saldo+cantidad,2);
 	}
 
 	public void retirarFondos(double euros) {
 		if (euros<=saldo) {
-			saldo = saldo - (euros + (interes*euros));
-			System.out.print("Se han retirado " + euros + "€. ");
-			System.out.println("Se penalizado con " + (interes*euros) + "€.");
-		} else {System.out.println("No se puede realizar esta operación.");}
+			saldo = Cuenta.redondear(saldo - (euros + (interes*euros)),2);
+			System.out.print("Se han retirado " + euros + "€ de la cuenta de ahorro. ");
+			System.out.println("Se penalizado con " + Cuenta.redondear((interes*euros),2) + "€.");
+		} else {System.out.println("No se puede realizar esta operación en la cuenta de ahorro.");}
 	}
-
-	public void verDetalles() {
-		// TODO Auto-generated method stub
-		System.out.println("La cuenta de ahorro " + ncuenta + " tiene " + saldo + "€.");
+	
+	public String toString() {
+		return (super.toString() + " de ahorro nº" + ncuenta + " con " + Cuenta.redondear(saldo,2) + "€.");
 	}
-		
+	
 }
